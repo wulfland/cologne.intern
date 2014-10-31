@@ -58,4 +58,4 @@ Well, now you need to wait some hours. The script will reboot your machine.
 
 ## Nice to know
 - Get an great overview of your running vm in the new azure portal! https://portal.azure.com
-- Developer Machines costs only $.06 per hour! But if you don't need your maschine - shutdown the cloud service of it.
+- Developer Machines costs only $.06 per hour! But if you don't need your machine - shutdown the cloud service of it.
