@@ -1,5 +1,5 @@
-# cologne.intern - SharePoint 2013 App Development in Azure
-==============
+# cologne.intern 
+## SharePoint 2013 App Development in Azure
 
 Steps to set up an very simple and minimal environment for SharePoint 2013 App Development in Azure
 
@@ -13,5 +13,25 @@ Steps to set up an very simple and minimal environment for SharePoint 2013 App D
 3. Wait until machine is provisioned and running
 4. Connect with "sp13mpiendl\CoreAdmin" and "Cologne123"
 5. Start PowerShell as Administrator and execute
-   `iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/michl86/cologne.intern/master/configure13appdev.ps1'))`
+```
+   iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/michl86/cologne.intern/master/configure13appdev.ps1'))
+```
 6. Have a break, have a kit-kat (or many of them - because it will take some hours). Script reboots machine when done.
+
+### Users
+- **sp13mpiendl\CoreAdmin** - For work in central administration and maintaince
+- **sp13mpiendl\Developer** - For developing and deploying sharepoint hosted and provider hosted applications
+
+### Url
+- http://cologne.intern:11111 - SharePoint 2013 central administration
+- http://cologne.intern - Default SharePoint Site
+- http://cologne.intern/sites/dev - SiteCollection with DeveloperSite Template
+- https://cologneapp.intern - IIS WebSite for Provider Hosted App
+
+### Certificates
+- "CN=cologneapp.intern" in C:\Certificates (already register for "https://cologneapp.intern" and in SharePoint)
+
+## SharePoint Apps
+- IssuerId: 11111111-1111-1111-1111-111111111111
+- Prefix: app
+- Domain: app.cologne.intern
