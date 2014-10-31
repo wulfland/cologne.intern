@@ -55,3 +55,7 @@ Well, now you need to wait some hours. The script will reboot your machine.
 6. Trust the self signed certificate from Visual Studio
 7. Trust you SharePoint App (on first run - activate the intranet settings in IE!)
 8. Cross your fingers!
+
+## Nice to know
+- Get an great overview of your running vm in the new azure portal! https://portal.azure.com
+- Developer Machines costs only $.06 per hour! But if you don't need your maschine - shutdown the cloud service of it.
