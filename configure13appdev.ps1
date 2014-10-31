@@ -187,9 +187,15 @@ cd 'C:\Program Files\nodejs\'
 
 ################################################################################
 #write-header "Set Desktop Background"
-Invoke-WebRequest "http://de.best-wallpaper.net/wallpaper/1920x1200/1212/Urban-landscape-Cologne-Germany-sunset-sky-the-Rhine-bridge-buildings_1920x1200.jpg" -OutFile C:\wallpaper.jpg
-set-itemproperty -path "HKCU:Control Panel\Desktop" -name wallpaper -value "C:\wallpaper.jpg"
+Invoke-WebRequest "https://raw.githubusercontent.com/michl86/cologne.intern/master/wallpaper/wallpaper_coreadmin.jpg" -OutFile C:\wallpaper_coreadmin.jpg
+Invoke-WebRequest "https://raw.githubusercontent.com/michl86/cologne.intern/master/wallpaper/wallpaper_developer.jpg" -OutFile C:\wallpaper_developer.jpg
+set-itemproperty -path "HKCU:Control Panel\Desktop" -name wallpaper -value "C:\wallpaper_coreadmin.jpg"
 set-itemproperty -path "HKCU:Control Panel\Desktop" -name WallpaperStyle -value 10
+$sb = {
+set-itemproperty -path "HKCU:Control Panel\Desktop" -name wallpaper -value "C:\wallpaper_developer.jpg"
+set-itemproperty -path "HKCU:Control Panel\Desktop" -name WallpaperStyle -value 10
+}
+Start-Job -Credential $developerCred -ScriptBlock $sb | Wait-Job
 
 ################################################################################
 write-header "Set Intranet Zone"
