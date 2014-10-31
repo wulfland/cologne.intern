@@ -16,7 +16,7 @@ Steps to set up an very simple and minimal environment for SharePoint 2013 App D
 ```
    iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/michl86/cologne.intern/master/configure13appdev.ps1'))
 ```
-6. Have a break, have a kit-kat (or many of them - because it will take some hours). Script reboots machine when done.
+Well, now you need to wait some hours. The script will reboot your machine.
 
 ### Users
 - **sp13mpiendl\CoreAdmin** - For work in central administration and maintaince
