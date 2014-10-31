@@ -53,5 +53,5 @@ Well, now you need to wait some hours. The script will reboot your machine.
 5. Use a certificate: C:\Certificates\cologneapp.intern.pfx (Password: Cologne123, IssuerId: 11111111-1111-1111-1111-111111111111)
 5. Start your application
 6. Trust the self signed certificate from Visual Studio
-7. Trust you SharePoint App
+7. Trust you SharePoint App (on first run - activate the intranet settings in IE!)
 8. Cross your fingers!
