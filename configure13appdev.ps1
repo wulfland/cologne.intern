@@ -43,49 +43,6 @@ $developerCred = New-Object -TypeName System.Management.Automation.PSCredential 
 
 
 ################################################################################
-write-header "Set Intranet Zone"
-if (-not (Test-Path -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\cologne.intern'))
-{
-    $null = New-Item -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\cologne.intern'
-}
-Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\cologne.intern' -Name http -Value 1 -Type DWord
-Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\cologne.intern' -Name https -Value 1 -Type DWord
-if (-not (Test-Path -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\cologneapp.intern'))
-{
-    $null = New-Item -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\cologneapp.intern'
-}
-Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\cologneapp.intern' -Name http -Value 1 -Type DWord
-Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\cologneapp.intern' -Name https -Value 1 -Type DWord
-if (-not (Test-Path -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\sp13mpiendl'))
-{
-    $null = New-Item -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\sp13mpiendl'
-}
-Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\sp13mpiendl' -Name http -Value 1 -Type DWord
-Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\sp13mpiendl' -Name https -Value 1 -Type DWord
-
-$sb = {
-	if (-not (Test-Path -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\cologne.intern'))
-	{
-		$null = New-Item -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\cologne.intern'
-	}
-	Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\cologne.intern' -Name http -Value 1 -Type DWord
-	Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\cologne.intern' -Name https -Value 1 -Type DWord
-	if (-not (Test-Path -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\cologneapp.intern'))
-	{
-		$null = New-Item -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\cologneapp.intern'
-	}
-	Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\cologneapp.intern' -Name http -Value 1 -Type DWord
-	Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\cologneapp.intern' -Name https -Value 1 -Type DWord
-	if (-not (Test-Path -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\sp13mpiendl'))
-	{
-		$null = New-Item -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\sp13mpiendl'
-	}
-	Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\sp13mpiendl' -Name http -Value 1 -Type DWord
-	Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\sp13mpiendl' -Name https -Value 1 -Type DWord
-}
-Start-Job -Credential $developerCred -ScriptBlock $sb | Wait-Job
-
-################################################################################
 write-header "Extend HostFile"
 add-hostfilecontent -IPAddress 127.0.0.1 -computer cologne.intern
 add-hostfilecontent -IPAddress 127.0.0.1 -computer cologneapp.intern
@@ -233,6 +190,49 @@ cd 'C:\Program Files\nodejs\'
 Invoke-WebRequest "http://de.best-wallpaper.net/wallpaper/1920x1200/1212/Urban-landscape-Cologne-Germany-sunset-sky-the-Rhine-bridge-buildings_1920x1200.jpg" -OutFile C:\wallpaper.jpg
 set-itemproperty -path "HKCU:Control Panel\Desktop" -name wallpaper -value "C:\wallpaper.jpg"
 set-itemproperty -path "HKCU:Control Panel\Desktop" -name WallpaperStyle -value 10
+
+################################################################################
+write-header "Set Intranet Zone"
+if (-not (Test-Path -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\cologne.intern'))
+{
+    $null = New-Item -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\cologne.intern'
+}
+Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\cologne.intern' -Name http -Value 1 -Type DWord
+Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\cologne.intern' -Name https -Value 1 -Type DWord
+if (-not (Test-Path -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\cologneapp.intern'))
+{
+    $null = New-Item -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\cologneapp.intern'
+}
+Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\cologneapp.intern' -Name http -Value 1 -Type DWord
+Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\cologneapp.intern' -Name https -Value 1 -Type DWord
+if (-not (Test-Path -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\sp13mpiendl'))
+{
+    $null = New-Item -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\sp13mpiendl'
+}
+Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\sp13mpiendl' -Name http -Value 1 -Type DWord
+Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\sp13mpiendl' -Name https -Value 1 -Type DWord
+
+$sb = {
+	if (-not (Test-Path -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\cologne.intern'))
+	{
+		$null = New-Item -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\cologne.intern'
+	}
+	Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\cologne.intern' -Name http -Value 1 -Type DWord
+	Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\cologne.intern' -Name https -Value 1 -Type DWord
+	if (-not (Test-Path -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\cologneapp.intern'))
+	{
+		$null = New-Item -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\cologneapp.intern'
+	}
+	Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\cologneapp.intern' -Name http -Value 1 -Type DWord
+	Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\cologneapp.intern' -Name https -Value 1 -Type DWord
+	if (-not (Test-Path -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\sp13mpiendl'))
+	{
+		$null = New-Item -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\sp13mpiendl'
+	}
+	Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\sp13mpiendl' -Name http -Value 1 -Type DWord
+	Set-ItemProperty -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Internet Settings\ZoneMap\Domains\sp13mpiendl' -Name https -Value 1 -Type DWord
+}
+Start-Job -Credential $developerCred -ScriptBlock $sb | Wait-Job
 
 ################################################################################
 write-header "DONE! RESTART PC"
