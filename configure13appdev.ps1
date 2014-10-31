@@ -176,7 +176,7 @@ New-SPTrustedRootAuthority -Name "CologneAppIntern" -Certificate 'C:\Certificate
 $realm = Get-SPAuthenticationRealm
 $specificIssuerId = "11111111-1111-1111-1111-111111111111"
 $fullIssuerIdentifier = $specificIssuerId + '@' + $realm 
-New-SPTrustedSecurityTokenIssuer -Name "CologneAppIntern" -Certificate 'C:\Certificates\cologneapp.intern.cer' -RegisteredIssuerName $fullIssuerIdentifier –IsTrustBroker
+New-SPTrustedSecurityTokenIssuer -Name "CologneAppIntern" -Certificate 'C:\Certificates\cologneapp.intern.cer' -RegisteredIssuerName $fullIssuerIdentifier -IsTrustBroker
 iisreset
 $serviceConfig = Get-SPSecurityTokenServiceConfig
 $serviceConfig.AllowOAuthOverHttp = $true
