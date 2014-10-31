@@ -1,4 +1,4 @@
-## SERVER NAME 	  sp13mpiendl
+﻿## SERVER NAME 	  sp13mpiendl
 ## Intranet URI	  cologne.intern
 ## API URI		  app.cologne.intern
 
