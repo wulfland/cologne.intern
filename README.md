@@ -6,7 +6,7 @@ Steps to set up an very simple and minimal environment for SharePoint 2013 App D
 1. Open Azure Portal
 2. Create a new virtual machine from gallery (MSDN Account required!)
  - Image: Visual Studio Premium 2013 Update 3 - Windows Server 2012
- - Virtual Machine Name: sp13mpiendl
+ - Virtual Machine Name: sp13mpiendl (or something else)
  - Size: A4
  - New User Name: CoreAdmin
  - New Password: Cologne123
