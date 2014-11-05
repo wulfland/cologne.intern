@@ -56,6 +56,12 @@ Well, now you need to wait some hours. The script will reboot your machine.
 7. Trust you SharePoint App (on first run - activate the intranet settings in IE!)
 8. Cross your fingers!
 
+## Public Endpoint for your SharePoint (to access from your local workstation)
+1. Add an 80:80 endpoint to your AzureVM
+2. Add the CloudService Url as Internet Alternate Access Mapping in your SharePoint
+
 ## Nice to know
 - Get an great overview of your running vm in the new azure portal! https://portal.azure.com
 - Developer Machines costs only $.06 per hour! But if you don't need your machine - shutdown the cloud service of it.
+
+
